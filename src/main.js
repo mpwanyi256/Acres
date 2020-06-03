@@ -27,6 +27,20 @@ new Vue({
       cacheSizeBytes: firebase.firestore.CACHE_SIZE_UNLIMITED,
     });
     firebase.firestore().enablePersistence();
+
+    firebase.auth().onAuthStateChanged((user) => {
+      if (user) {
+        const userDetails = {
+          id: user.uid,
+          name: user.displayName,
+          email: user.email,
+          provider: user.providerData[0].providerId,
+        };
+        this.$store.dispatch('autoSignIn', userDetails);
+      } else {
+        this.$store.dispatch('autoSignIn', null);
+      }
+    });
   },
   vuetify,
   render: (h) => h(App),
