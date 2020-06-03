@@ -1,17 +1,17 @@
 <template>
     <div>
-      <Barnner />
+      <!-- <Barnner /> -->
       <FeaturedList />
     </div>
 </template>
 
 <script>
-import Barnner from '@/components/landing/Barnner.vue';
+// import Barnner from '@/components/landing/Barnner.vue';
 import FeaturedList from '@/components/landing/FeaturedListing.vue';
 
 export default {
   components: {
-    Barnner,
+    // Barnner,
     FeaturedList,
   },
 };

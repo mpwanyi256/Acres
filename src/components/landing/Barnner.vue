@@ -1,16 +1,14 @@
 <template>
-        <v-row class="introDiv">
-            <v-col cols="12" xs="12" sm="12" md="12" lg="12" xl="12">
-                <div class="introMsg">
-                    <p class="small">Introducing</p>
-                    <p class="big">ACRES</p>
-                    <p class="small">Unique properties accross east africa.</p>
-                    <p>
-                        <v-btn large text class="white--text bntFind mt-3">Find Property</v-btn>
-                    </p>
-                </div>
-            </v-col>
-        </v-row>
+    <div class="introDiv">
+        <div class="introMsg">
+            <p class="small">Introducing</p>
+            <p class="big">ACRES</p>
+            <p class="small">Unique properties accross east africa.</p>
+            <p>
+                <v-btn large text class="white--text bntFind mt-3">Find Property</v-btn>
+            </p>
+        </div>
+    </div>
 </template>
 <script>
 export default {
@@ -28,11 +26,12 @@ export default {
         background-size: 100%;
         background-repeat: no-repeat;
         background-position: center;
-        height: 450px;
-        margin: 0!important;
+        height: 450px!important;
         position: relative;
         width: 100%!important;
         font-family: 'Montserrat';
+        margin: 0px none !important;
+        padding: 10px;
 
         .introMsg {
             position: absolute;

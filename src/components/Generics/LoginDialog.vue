@@ -1,24 +1,18 @@
 <template>
-    <v-container>
-        <v-row>
-            <v-col cols="12" xs="12" sm="12" md="6" offset-md="3" lg="6" offset-lg="3">
-                <v-card class="mx-auto">
-                    <v-img
-                    src="https://cdn.vuetifyjs.com/images/cards/sunshine.jpg"
-                    height="200px"
-                    ></v-img>
-
-                    <v-card-title>
-                    Singin
-                    </v-card-title>
-
-                    <v-card-actions class="text-center">
+    <v-dialog v-model="dialog" width="500">
+        <v-card>
+            <v-card-title class="authDialog">
+                Select Signin Option
+                <v-spacer></v-spacer>
+                 <v-btn icon small @click="closeDialog">
+                     <v-icon>mdi-close</v-icon>
+                 </v-btn>
+                </v-card-title>
+                <v-card-text class="authDialogBody">
                     <section id="firebaseui-auth-container"></section>
-                    </v-card-actions>
-                </v-card>
-            </v-col>
-        </v-row>
-    </v-container>
+                </v-card-text>
+        </v-card>
+    </v-dialog>
 </template>
 <script>
 import * as firebase from 'firebase';
@@ -26,6 +20,20 @@ import * as firebaseui from 'firebaseui';
 import 'firebaseui/dist/firebaseui.css';
 
 export default {
+  name: 'AuthDialog',
+
+  data() {
+    return {
+      dialog: true,
+    };
+  },
+
+  methods: {
+    closeDialog() {
+      this.$emit('closeAuthDialog');
+    },
+  },
+
   mounted() {
     let ui = firebaseui.auth.AuthUI.getInstance();
     if (!ui) {
@@ -46,3 +54,11 @@ export default {
   },
 };
 </script>
+<style scoped>
+    .authDialog {
+        background-color: rgb(255,255,255)!important;
+    }
+    .authDialogBody {
+        background-color: transparent!important;
+    }
+</style>

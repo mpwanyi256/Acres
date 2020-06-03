@@ -17,10 +17,3 @@ export default {
 
 };
 </script>
-<style scoped>
-  .mainContainer {
-    margin: 0px none !important;
-    width: 100%!important;
-    height: 100%!important;
-  }
-</style>
