@@ -184,7 +184,6 @@ export default {
                 border: 0px none !important;
             }
 
-
         }
         .searchItemBtn{
             transition: border-color 0.2s ease 0s !important;
